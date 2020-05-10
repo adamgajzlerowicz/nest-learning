@@ -16,7 +16,6 @@ import { PostModule } from './post/post.module';
       entities: [],
       synchronize: true,
     }),
-    PostModule,
   ],
 })
 @Module({
