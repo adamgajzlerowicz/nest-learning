@@ -1,0 +1,10 @@
+POST http://localhost:3000/cats
+Content-Type: application/json
+
+{
+  "name":"fluffy",
+  "colorx": "kremowy"
+
+}
+
+###

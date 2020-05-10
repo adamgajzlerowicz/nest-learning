@@ -29,10 +29,6 @@ services:
     depends_on:
       - postgres
     working_dir: /app
-    environment:
-      DB_USERNAME: foo
-      DB_PASSWORD: foo
-      DB: foo
     command:
       - /bin/sh
       - -c
