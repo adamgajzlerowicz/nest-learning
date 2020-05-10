@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  adminer:
+    image: adminer:4
+    depends_on:
+      - postgres
+    restart: always
+    environment:
+      - ADMINER_DEFAULT_SERVER=postgres
+    ports:
+      - 8080:8080
+
+  postgres:
+    image: postgres:12
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: foo
+      POSTGRES_PASSWORD: foo
+
+  api:
+    image: node:12
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    working_dir: /app
+    environment:
+      DB_USERNAME: foo
+      DB_PASSWORD: foo
+      DB: foo
+    command:
+      - /bin/sh
+      - -c
+      - |
+        npm start
