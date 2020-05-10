@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: foo
 
   api:
-    image: node:12
+    image: node:13
     volumes:
       - .:/app
     ports:
