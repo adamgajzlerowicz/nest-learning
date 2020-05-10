@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostModule } from './post/post.module';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -16,10 +17,12 @@ import { PostModule } from './post/post.module';
       entities: [],
       synchronize: true,
     }),
+    CatsModule,
+    // PostModule
   ],
 })
 @Module({
-  imports: [TypeOrmModule.forRoot(), PostModule],
+  // imports: [PostModule],
   controllers: [AppController],
   providers: [AppService],
 })
