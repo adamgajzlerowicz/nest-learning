@@ -19,6 +19,7 @@ export class User {
   password: string
 }
 
+
 export type UserDto = {
  username: string
  password: string

@@ -6,7 +6,6 @@ import { CatsModule } from './cats/cats.module';
 import {PostModule} from "./post/post.module";
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { UserController } from './user/user.controller';
 
 @Module({
     imports: [
@@ -26,7 +25,7 @@ import { UserController } from './user/user.controller';
         AuthModule,
         UsersModule
     ],
-    controllers: [AppController, UserController],
+    controllers: [AppController ],
     providers: [AppService],
 })
 export class AppModule {}

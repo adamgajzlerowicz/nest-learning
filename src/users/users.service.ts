@@ -10,7 +10,7 @@ export class UsersService {
     }
 
     create(body: UserDto) {
-        this.repo.save(body)
+        return this.repo.save(body)
     }
 
     findAll() {
