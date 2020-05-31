@@ -3,7 +3,6 @@ import {CatType} from "./cats.dto";
 import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
 import {Cat} from "./Cat";
-import {catchError} from "rxjs/operators";
 
 @Injectable()
 export class CatsService {

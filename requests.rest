@@ -2,8 +2,19 @@ POST http://localhost:3000/cats
 Content-Type: application/json
 
 {
+  "name":"lipton",
+  "color": "garfield",
+  "breed": "siam"
+
+}
+
+###
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
   "name":"fluffy",
-  "colorx": "kremowy"
+  "color": "kremowy"
 
 }
 

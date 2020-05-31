@@ -5,7 +5,7 @@ import {InjectRepository} from "@nestjs/typeorm";
 
 @Injectable()
 export class PostService extends TypeOrmCrudService<Post>{
-    constructor(@InjectRepository(Post) repo) {
+    constructor(@InjectRepository(Post) repo: any) {
         super(repo);
     }
 }
