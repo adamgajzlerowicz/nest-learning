@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import * as bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
 import {UsersService} from 'src/users/users.service';
@@ -36,13 +36,19 @@ export class AuthService {
 
   async register(user: User) {
     const hashed = await bcrypt.hash(user.password, 10)
-    // eslint-disable-next-line
-    const { password, ...createdUser } = await this.usersService.create({ 
-      ...user,
-      password: hashed
-    })
 
-    return createdUser 
+    try {
+      // eslint-disable-next-line
+      const { password, ...createdUser } = await this.usersService.create({ 
+        ...user,
+        password: hashed
+      })
+
+      return createdUser 
+    } catch(e) {
+      throw new HttpException(e.message, HttpStatus.BAD_REQUEST)
+    }
+
   }
 }
 

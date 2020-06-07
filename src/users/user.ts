@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Unique, Entity, PrimaryGeneratedColumn} from "typeorm";
 import {Column} from "typeorm";
 import {IsDefined, IsString} from "class-validator";
 
@@ -11,6 +11,7 @@ export class User {
   @IsDefined({ always: true })
   @IsString({ always: true })
   @Column()
+  @Unique(['username'])
   username: string
 
   @IsDefined({ always: true })

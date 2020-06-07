@@ -5,19 +5,17 @@ import { UserDto, User} from './user'
 
 @Injectable()
 export class UsersService {
+  constructor(@InjectRepository(User) private readonly repo: Repository<UserDto>) {}
 
-    constructor(@InjectRepository(User) private readonly repo: Repository<UserDto>) {
-    }
+  async create(body: UserDto) {
+    return await this.repo.save(body)
+  }
 
-    create(body: UserDto) {
-        return this.repo.save(body)
-    }
+  findAll() {
+    return this.repo.find()
+  }
 
-    findAll() {
-        return this.repo.find()
-    }
-
-    findOne(username: string): Promise<UserDto | undefined> {
-        return this.repo.findOne({ username })
-    }
+  findOne(username: string): Promise<UserDto | undefined> {
+    return this.repo.findOne({ username })
+  }
 }
