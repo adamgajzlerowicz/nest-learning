@@ -21,16 +21,16 @@ Content-Type: application/json
 ###
 
 ###
-GET http://localhost:3000/user/profile
+GET http://localhost:3000/users/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkYW0iLCJzdWIiOjEsImlhdCI6MTU5MDk1MDc0MiwiZXhwIjoxNTkwOTU0MzQyfQ.d9hE4siD-OSo7nNHoAkW3lQDRDVOWwpUwtdH8H1Tnvk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5lbGY4NkBnbWFpbC5jb20iLCJzdWIiOjEsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJpYXQiOjE1OTE1NTIxOTQsImV4cCI6MTU5MTU1NTc5NH0.YFpUeI9TRoSv6tjhRbB8RJSdXrNJOW7v91j5Qs_mCIE
 
 ###
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "username": "adam", "password": "changeme"
+  "username": "nelf86@gmail.com", "password": "foo"
 }
 
 ###

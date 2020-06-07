@@ -21,9 +21,4 @@ export class AuthController {
 
     return this.authService.register(user)
   }
-
-  //@UseGuards(JwtAuthGuard)
-  //@Post('refresh')
-  //async refresh() {
-  //}
 }
