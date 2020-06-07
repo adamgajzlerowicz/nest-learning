@@ -6,18 +6,19 @@ import { AuthController } from './auth.controller';
 import {jwtConstants} from './constants';
 import {JwtModule} from '@nestjs/jwt';
 import {JwtStrategy} from './jwt.strategy';
+import {JwtRefreshStrategy} from './jwt-refresh.strategy';
 
 @Module({
   imports: [
-    JwtModule.register({ 
+    JwtModule.register({
       secret: jwtConstants.secret, 
       verifyOptions: {
-        ignoreExpiration: true
+       ignoreExpiration: true
       }
     }),
     UsersModule, 
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy, JwtRefreshStrategy],
   controllers: [AuthController]
 })
 export class AuthModule {}
