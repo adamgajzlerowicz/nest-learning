@@ -35,4 +35,5 @@ services:
       - /bin/sh
       - -c
       - |
+        npm i
         npm run start:dev
