@@ -13,10 +13,10 @@ import {JwtRefreshStrategy} from './jwt-refresh.strategy';
     JwtModule.register({
       secret: jwtConstants.secret, 
       verifyOptions: {
-       ignoreExpiration: true
+        ignoreExpiration: true
       }
     }),
-    UsersModule, 
+  UsersModule, 
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy, JwtRefreshStrategy],
   controllers: [AuthController]

@@ -1,4 +1,4 @@
-import { Injectable, HttpException, HttpStatus, UnauthorizedException } from '@nestjs/common';
+import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import * as bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
 import {UsersService} from 'src/users/users.service';
@@ -35,7 +35,6 @@ export class AuthService {
 
     return {
       "access_token": this.jwtService.sign({ ...payload, type: 'access_token'}),
-      "refresh_token": this.jwtService.sign({ ...payload, type: 'refresh_token'}),
     }
   }
 

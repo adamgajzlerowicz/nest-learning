@@ -20,6 +20,12 @@ export class User {
   password: string
 }
 
+export type UserType = {
+ username: string
+ id: string,
+ password: string
+}
+
 
 export type UserDto = {
  username: string

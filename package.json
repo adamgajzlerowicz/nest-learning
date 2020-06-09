@@ -30,6 +30,7 @@
     "@nestjs/typeorm": "^7.0.0",
     "@nestjsx/crud": "^4.6.1",
     "@nestjsx/crud-typeorm": "^4.6.1",
+    "@switchit/nestjs-oauth2-server": "^0.1.4",
     "bcrypt": "^4.0.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
